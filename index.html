@@ -31,20 +31,20 @@
                             <p>Wind Speed</p>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
-        </div> 
+        </div>
 
         <script>
             const apiKey = "32160c9721e6da8b1fb747777be9d631";
-            const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=bangalore";
+            const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
             const searchBox = document.querySelector(".search input");
             const searchBtn = document.querySelector(".search button");
             const weatherIcon = document.querySelector(".weather-icon");
 
-            async function checkweather(){
+            async function checkWeather(city){
                 const response = await fetch(apiUrl + city + '&appid=${apiKey}');
                 var data = await response.json();
 
@@ -73,10 +73,10 @@
             }
 
             searchBtn.addEventListener("click",()=>{
-                checkweather(searchBox.value);
+                checkWeather(searchBox.value);
             })
 
-            
+
         </script>
 
     </body>
